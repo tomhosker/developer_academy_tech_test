@@ -4,13 +4,18 @@ block content
     h1 #{title}
 
     h2 Weather Forecast
-    p Weather forecast for #{locationString} on #{dateString}.
+    p Weather forecast for #[b #{locationString}] on #{dateString}.
     table
         tr
-            th Today
-            th Tomorrow
-            th #{summaries[2].dateString}
-            th #{summaries[3].dateString}
-            th #{summaries[4].dateString}
-            th #{summaries[5].dateString}
-            th #{summaries[6].dateString}
+            th Day
+            th Description
+            th Temperature (Min/Max)
+            th Wind Speed
+        for summary in summaries
+            tr
+                td=summary.dateString
+                td
+                    img(class="weathericon", src=summary.iconURL)
+                    | #{summary.desc}
+                td #{summary.tempMin}°C / #{summary.tempMax}°C
+                td #{summary.windSpeed} m/s
