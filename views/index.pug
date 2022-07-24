@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1 #{title}
+
+    h2 Weather Forecast
+    p Weather forecast for #{locationString} on #{dateString}.
+    table
+        tr
+            th Today
+            th Tomorrow
+            th #{summaries[2].dateString}
+            th #{summaries[3].dateString}
+            th #{summaries[4].dateString}
+            th #{summaries[5].dateString}
+            th #{summaries[6].dateString}
