@@ -18,4 +18,11 @@ router.get("/", function (req, res, next) {
     summariesMaker.wrapUp();
 });
 
+// Adjust to give the weather at a specific location.
+router.post("/loc", function (req, res, next) {
+    const summariesMaker = new SummariesMaker(req, res, req.body.location);
+
+    summariesMaker.wrapUp();
+});
+
 module.exports = router;

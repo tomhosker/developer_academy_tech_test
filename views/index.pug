@@ -5,6 +5,15 @@ block content
 
     h2 Weather Forecast
     p Weather forecast for #[b #{locationString}] on #{dateString}.
+    form(action="/loc", method="post")
+        p Select another location:
+        select(id="location", name="location")
+            option(value="Sheffield") Sheffield
+            option(value="London") London
+            option(value="Rome") Rome
+            option(value="Ouagadougou") Ouagadougou
+        input(type="submit", value="Submit")
+    br
     table
         tr
             th Day
